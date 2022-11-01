@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package calculator;
 
+import "primes.proto";
+import "sum.proto";
+
 option go_package = "github.com/MiguelBee97/grpc-go/calculator/proto";
 
-import "sum.proto";
-import "primes.proto";
-
 service CalculatorService {
-    rpc Sum(SumRequest) returns (SumResponse);
-    rpc Primes(PrimeRequest) returns (stream PrimeResponse);
+  rpc Sum(SumRequest) returns (SumResponse);
+  rpc Primes(PrimeRequest) returns (stream PrimeResponse);
 }
